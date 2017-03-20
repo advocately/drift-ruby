@@ -36,7 +36,7 @@ drift = Drift::Client.new("YOUR ORG ID")
 ```ruby
 # Arguments
 # attributes (required) - a hash of information about the customer. You can pass any
-#                         information that would be useful in your triggers. You 
+#                         information that would be useful in your triggers. You
 #                         must at least pass in an id, email, and created_at timestamp.
 
 drift.identify(5,  {
@@ -60,11 +60,11 @@ drift.identify(5,  {
 drift.track(5, "purchase", { type: "socks", price: "13.99" })
 ```
 
-**Note:** If you'd like to track events which occurred in the past, you can include a `created_at` attribute
-(in seconds since the epoch), and we'll use that as the date the event occurred.
+**Note:** If you'd like to track events which occurred in the past, you can include a `occurred_at` attribute
+(in milliseconds since the epoch), and we'll use that as the date the event occurred.
 
 ```ruby
-drift.track(5, "purchase", type: "socks", price: "13.99", created_at: 1365436200)
+drift.track(5, "purchase", type: "socks", price: "13.99", occurred_at: 1365436200)
 ```
 
 ## Contributing
